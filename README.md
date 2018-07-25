@@ -1,0 +1,1 @@
+# React auth starter kit

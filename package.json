@@ -1,0 +1,51 @@
+{
+  "name": "starter",
+  "version": "0.1.0",
+  "private": true,
+  "dependencies": {
+    "axios": "^0.18.0",
+    "bootstrap": "4.1.1",
+    "history": "^4.7.2",
+    "lodash": "^4.17.5",
+    "moment": "^2.22.2",
+    "ncp": "^2.0.0",
+    "node-sass-chokidar": "^1.2.2",
+    "react": "^16.3.1",
+    "react-dom": "^16.3.1",
+    "react-icons": "^2.2.7",
+    "react-loadable": "^5.3.1",
+    "react-redux": "^5.0.7",
+    "react-router-dom": "^4.2.2",
+    "react-router-redux": "^5.0.0-alpha.9",
+    "react-s-alert": "^1.4.1",
+    "react-scripts": "1.1.4",
+    "react-spinners": "^0.3.2",
+    "reactstrap": "^6.0.1",
+    "redux": "^3.7.2",
+    "redux-devtools-extension": "^2.13.2",
+    "redux-thunk": "^2.2.0",
+    "rimraf": "^2.6.2"
+  },
+  "scripts": {
+    "cp-test": "ncp ./.gitignore.build ../cp-test/.gitignore",
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test --env=jsdom",
+    "eject": "react-scripts eject",
+    "build:clean": "rimraf ../frontend/web/admin",
+    "build:copy": "npm run build:clean && ncp ./build ../frontend/web/admin && ncp ./.gitignore.build ../frontend/web/admin/.gitignore",
+    "build:prod": "npm run build && npm run build:copy",
+    "build:Dev": "npm install && npm run build:prod",
+    "build:Test": "npm install && npm run build:prod",
+    "build:Live": "npm install && npm run build:prod",
+    "build-css": "node-sass-chokidar src/ -o src/",
+    "watch-css": "npm run build-css && node-sass-chokidar src/ -o src/ --watch --recursive"
+  },
+  "homepage": "/admin",
+  "devDependencies": {
+    "react-skylight": "^0.5.1",
+    "react-table": "^6.8.2",
+    "react-toggle-switch": "^3.0.4"
+  },
+  "proxy": "https://start.dev.gbksoft.net"
+}
